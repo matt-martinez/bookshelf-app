@@ -78,8 +78,8 @@ router.delete('/:id', function(req, res) {
     .then(function(user) {
       user.bookList.id(req.params.id).remove();
       user.save();
-      console.log("Checking User");
-      console.log(user);
+      // console.log("Checking User");
+      // console.log(user);
       res.json({ user });
     })
     .catch(function(err) {
