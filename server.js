@@ -7,7 +7,7 @@ var mongoose            = require('mongoose');
 
 // CONTROLLERS
 var booksController     = require('./controllers/books.js');
-var sessionsController  = require('./controllers/books.js');
+var sessionsController  = require('./controllers/sessions.js');
 var usersController     = require('./controllers/users.js');
 
 // MIDDLEWARE
