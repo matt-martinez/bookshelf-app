@@ -7,7 +7,7 @@ var authHelpers     = require('../helpers/auth.js');
 
 // Book Show
 router.get('/', function(req, res) {
-  console.log("Backend Book Show")
+  console.log("Backend Book Show");
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 // Book Create
 router.post('/', function(req, res) {
-  console.log("Backend Book Create")
+  console.log("Backend Book Create");
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
       // console.log("looking for user");
@@ -49,7 +49,7 @@ router.post('/', function(req, res) {
 
 // Book Update
 router.put('/:id', function(req, res) {
-  console.log("Backend Book Edit")
+  console.log("Backend Book Edit");
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
       var book = user.bookList.id(req.params.id);
@@ -59,11 +59,11 @@ router.put('/:id', function(req, res) {
       book.pageCount = req.body.pageCount;
       book.status = req.body.status;
 
-      console.log("Checking book");
-      console.log(book);
+      // console.log("Checking book");
+      // console.log(book);
       user.save();
-      console.log("Checking user");
-      console.log(user);
+      // console.log("Checking user");
+      // console.log(user);
       res.json({ book: user.bookList.id(req.params.id) });
     })
     .catch(function(err) {
@@ -72,7 +72,20 @@ router.put('/:id', function(req, res) {
 });
 
 // Book Delete
-
+router.delete('/:id', function(req, res) {
+  console.log("Backend Book Delete");
+  User.findById(req.session.currentUser._id).exec()
+    .then(function(user) {
+      user.bookList.id(req.params.id).remove();
+      user.save();
+      console.log("Checking User");
+      console.log(user);
+      res.json({ user });
+    })
+    .catch(function(err) {
+      res.json(err)
+    });
+});
 
 // EXPORTS
 module.exports = router;
