@@ -8,7 +8,8 @@ angular.module('BookshelfApp', ['ui.router'])
     $stateProvider
     .state('index', {
       url: '/',
-      templateUrl: '/partials/home.html'
+      templateUrl: '/partials/home.html',
+      controller: 'BookController as book'
     })
     .state('signup', {
       url: '/signup',
