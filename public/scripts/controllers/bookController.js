@@ -17,11 +17,31 @@ function BookController($scope, $http, $state, $stateParams) {
       });
   }
 
+  self.newBook = {title: '', author: '', genre: '', pageCount: '', status: ''};
   // Create
+  function addBook(currentUser) {
+    console.log("FrontEnd Book Create")
+    self.newBook = {
+      title: self.newBook.title,
+      author: self.newBook.author,
+      genre: self.newBook.genre,
+      pageCount: self.newBook.pageCount,
+      status: self.newBook.status
+    }
+    $http.post(`/users/${currentUser._id}/books`, self.newBook)
+    .then(function(response) {
+      console.log(response);
+      getUserBooks(currentUser);
+      self.newBook = {title: '', author: '', genre: '', pageCount: '', status: ''};
+    });
+  }
 
   // Update
 
   // Delete
 
+
+
+  self.addBook = addBook;
   self.getUserBooks = getUserBooks;
 }

@@ -1,5 +1,30 @@
-<h2>Your Books</h2>
+<div class="">
+  <h2>Add A Book:</h2>
+  <form ng-submit="book.addBook(home.currentUser)">
+    <div class="">
+      <input type="text" placeholder="Book Title" ng-model="book.newBook.title">
+    </div>
+    <div class="">
+      <input type="text" placeholder="Book Author" ng-model="book.newBook.author">
+    </div>
+    <div class="">
+      <input type="text" placeholder="Book Genre" ng-model="book.newBook.genre">
+    </div>
+    <div class="">
+      <input type="text" placeholder="Book Page Count" ng-model="book.newBook.pageCount">
+    </div>
+    <div class="">
+      <input type="radio" ng-model="book.newBook.status" value="Read/Keep">Read/Keep
+      <input type="radio" ng-model="book.newBook.status" value="Read/Donate">Read/Donate
+      <input type="radio" ng-model="book.newBook.status" value="In Progress">In Progress
+      <input type="radio" ng-model="book.newBook.status" value="Haven't Read">Haven't Read
+      <input type="radio" ng-model="book.newBook.status" value="Won't Read">Won't Read
+    </div>
+      <button>Submit</button>
+  </form>
+</div>
 
+<h2>Your Books</h2>
 <div class="" ng-repeat="books in book.savedBooks">
   <h4>Title: {{books.title}}</h4>
   <p>Author: {{books.author}}</p>
