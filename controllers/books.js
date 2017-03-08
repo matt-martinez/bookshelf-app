@@ -47,8 +47,29 @@ router.post('/', function(req, res) {
     });
 });
 
-
 // Book Update
+router.put('/:id', function(req, res) {
+  console.log("Backend Book Edit")
+  User.findById(req.session.currentUser._id).exec()
+    .then(function(user) {
+      var book = user.bookList.id(req.params.id);
+      book.title = req.body.title;
+      book.author = req.body.author;
+      book.genre = req.body.genre;
+      book.pageCount = req.body.pageCount;
+      book.status = req.body.status;
+
+      console.log("Checking book");
+      console.log(book);
+      user.save();
+      console.log("Checking user");
+      console.log(user);
+      res.json({ book: user.bookList.id(req.params.id) });
+    })
+    .catch(function(err) {
+      res.json(err)
+    });
+});
 
 // Book Delete
 
