@@ -10,4 +10,9 @@ angular.module('BookshelfApp', ['ui.router'])
       url: '/',
       templateUrl: '/partials/home.html'
     })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: '/partials/signup.html',
+      controller: 'AuthController as auth'
+    })
   }
