@@ -32,7 +32,7 @@
   <p>Page Count: {{book.pageCount}}</p>
   <p>Status: {{book.status}}</p>
   <div class="">
-    <button ng-click="editForm=true">Edit</button>
+    <button ng-click="editForm=true">Edit</button><button ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button>
       <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
         <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
         <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author">

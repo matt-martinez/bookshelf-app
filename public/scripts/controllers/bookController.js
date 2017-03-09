@@ -42,14 +42,21 @@ function BookController($scope, $http, $state, $stateParams) {
     }
     $http.put(`/users/${currentUser._id}/books/${id}`, self.updatedBook)
       .then(function(response) {
-        console.log(response);
+        // console.log(response);
         getUserBooks(currentUser);
       });
   }
 
   // Delete
+  function deleteBook(currentUser, id) {
+    console.log("FrontEnd Book Delete");
+    $http.delete(`/users/${currentUser._id}/books/${id}`)
+      .then(function(response) {
+        getUserBooks(currentUser);
+      });
+  }
 
-
+  self.deleteBook = deleteBook;
   self.editBook = editBook;
   self.addBook = addBook;
   self.getUserBooks = getUserBooks;
