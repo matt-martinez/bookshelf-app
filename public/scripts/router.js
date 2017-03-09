@@ -9,7 +9,7 @@ angular.module('BookshelfApp', ['ui.router'])
     .state('index', {
       url: '/',
       templateUrl: '/partials/home.html',
-      controller: 'BookController as book'
+      controller: 'BookController as books'
     })
     .state('signup', {
       url: '/signup',
