@@ -1,8 +1,0 @@
-.statusColumns {
-  display: flex;
-  flex-direction: row;
-}
-
-.column {
-  margin-right: 50px;
-}
