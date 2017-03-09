@@ -1,0 +1,23 @@
+<div class="individualBook">
+  <h4>Title: {{book.title}}</h4>
+  <p>Author: {{book.author}}</p>
+  <p>Genre: {{book.genre}}</p>
+  <p>Page Count: {{book.pageCount}}</p>
+  <div class="">
+    <button ng-click="editForm=true">Edit</button><button ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button>
+      <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
+        <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
+        <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author">
+        <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre">
+        <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount">
+        <div class="">
+          <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status">Read/Keep
+          <input type="radio" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate
+          <input type="radio" value="In Progress" ng-model="books.updatedBook.status">In Progress
+          <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read
+          <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
+        </div>
+        <button ng-click="editForm=false">Submit Edit</button>
+      </form>
+  </div>
+</div>
