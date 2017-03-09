@@ -24,5 +24,8 @@
     "express-session": "^1.15.1",
     "mongoose": "^4.8.6",
     "morgan": "^1.8.1"
+  },
+  "engines": {
+    "node": "7.4.0"
   }
 }
