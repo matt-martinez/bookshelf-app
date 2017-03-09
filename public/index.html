@@ -22,20 +22,18 @@
   </head>
 
   <body ng-controller="HomeController as home">
-    <nav ng-controller="AuthController as auth">
-      <h1 ui-sref="index">The Bookcase</h1>
-      <ul>
-        <li ng-if="!home.currentUser" ui-sref="signup">Sign Up!</li>
-        <li ng-if="home.currentUser" ng-click="auth.logout()">Logout</li>
-        <li><form ng-submit="auth.login(userPass)">
-          <div class="">
+    <nav class="pure-menu pure-menu-horizontal" ng-controller="AuthController as auth">
+      <h1 class="pure-menu-heading pure-menu-link" ui-sref="index">The Bookcase</h1>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item" ng-if="!home.currentUser">
+          <form class="pure-form" ng-submit="auth.login(userPass)">
             <input type="text" placeholder="Email" ng-model="userPass.email">
-          </div>
-          <div class="">
             <input type="password" placeholder="Password" ng-model="userPass.password">
-          </div>
-          <button>Login</button>
-        </form></li>
+            <button class="pure-button">Login</button>
+          </form>
+        </li>
+        <li class="pure-menu-item" ng-if="home.currentUser" ng-click="auth.logout()">Logout</li>
+        <li class="pure-menu-item" ng-if="!home.currentUser" ui-sref="signup">Sign Up!</li>
       </ul>
     </nav>
 
