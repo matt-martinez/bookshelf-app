@@ -24,9 +24,9 @@
   </form>
 </div>
 
+<h2>Your Books</h2>
 <div class="statusColumns">
-  <h2>Your Books</h2>
-  <div class="readKeep">
+  <div class="readKeep column">
     <h3>Read/Keep</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Keep' ">
       <h4>Title: {{book.title}}</h4>
@@ -53,7 +53,7 @@
       </div>
     </div>
   </div>
-  <div class="readDonate">
+  <div class="readDonate column">
     <h3>Read/Donate</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Donate' ">
       <h4>Title: {{book.title}}</h4>
@@ -80,7 +80,7 @@
       </div>
     </div>
   </div>
-  <div class="inProgress">
+  <div class="inProgress column">
     <h3>In Progress</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'In Progress' ">
       <h4>Title: {{book.title}}</h4>
@@ -107,7 +107,7 @@
       </div>
     </div>
   </div>
-  <div class="haventRead">
+  <div class="haventRead column">
     <h3>Haven't Read</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Haven\'t Read' ">
       <h4>Title: {{book.title}}</h4>
@@ -134,7 +134,7 @@
       </div>
     </div>
   </div>
-  <div class="wontRead">
+  <div class="wontRead column">
     <h3>Won't Read</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Won\'t Read' ">
       <h4>Title: {{book.title}}</h4>
