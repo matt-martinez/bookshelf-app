@@ -25,9 +25,9 @@
 </div>
 
 <div class="statusColumns">
-
+  <h2>Your Books</h2>
   <div class="readKeep">
-    <h2>Your Books</h2>
+    <h3>Read/Keep</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Keep' ">
       <h4>Title: {{book.title}}</h4>
       <p>Author: {{book.author}}</p>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="readDonate">
-    <h2>Your Books</h2>
+    <h3>Read/Donate</h3>
     <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Donate' ">
       <h4>Title: {{book.title}}</h4>
       <p>Author: {{book.author}}</p>
@@ -80,9 +80,63 @@
       </div>
     </div>
   </div>
-  <div class="readKeep">
-    <h2>Your Books</h2>
-    <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Keep' ">
+  <div class="inProgress">
+    <h3>In Progress</h3>
+    <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'In Progress' ">
+      <h4>Title: {{book.title}}</h4>
+      <p>Author: {{book.author}}</p>
+      <p>Genre: {{book.genre}}</p>
+      <p>Page Count: {{book.pageCount}}</p>
+      <p>Status: {{book.status}}</p>
+      <div class="">
+        <button ng-click="editForm=true">Edit</button><button ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button>
+          <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
+            <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
+            <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author">
+            <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre">
+            <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount">
+            <div class="">
+              <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status">Read/Keep
+              <input type="radio" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate
+              <input type="radio" value="In Progress" ng-model="books.updatedBook.status">In Progress
+              <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read
+              <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
+            </div>
+            <button ng-click="editForm=false">Submit Edit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class="haventRead">
+    <h3>Haven't Read</h3>
+    <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Haven\'t Read' ">
+      <h4>Title: {{book.title}}</h4>
+      <p>Author: {{book.author}}</p>
+      <p>Genre: {{book.genre}}</p>
+      <p>Page Count: {{book.pageCount}}</p>
+      <p>Status: {{book.status}}</p>
+      <div class="">
+        <button ng-click="editForm=true">Edit</button><button ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button>
+          <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
+            <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
+            <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author">
+            <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre">
+            <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount">
+            <div class="">
+              <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status">Read/Keep
+              <input type="radio" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate
+              <input type="radio" value="In Progress" ng-model="books.updatedBook.status">In Progress
+              <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read
+              <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
+            </div>
+            <button ng-click="editForm=false">Submit Edit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class="wontRead">
+    <h3>Won't Read</h3>
+    <div class="" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Won\'t Read' ">
       <h4>Title: {{book.title}}</h4>
       <p>Author: {{book.author}}</p>
       <p>Genre: {{book.genre}}</p>
