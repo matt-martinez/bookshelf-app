@@ -29,21 +29,14 @@ function BookController($scope, $http, $state, $stateParams) {
   }
 
   // Update
+  self.updatedBook = {title: '', author: '', genre: '', pageCount: '', status: ''};
   function editBook(currentUser, id) {
     console.log("FrontEnd Book Edit");
-    // console.log(currentUser.bookList);
-    // console.log(id);
-    self.updatedBook = {
-      title: self.updatedBook.title,
-      author: self.updatedBook.author,
-      genre: self.updatedBook.genre,
-      pageCount: self.updatedBook.pageCount,
-      status: self.updatedBook.status
-    }
     $http.put(`/users/${currentUser._id}/books/${id}`, self.updatedBook)
       .then(function(response) {
         // console.log(response);
         getUserBooks(currentUser);
+        self.updatedBook = {title: '', author: '', genre: '', pageCount: '', status: ''};
       });
   }
 
