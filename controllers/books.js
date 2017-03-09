@@ -7,18 +7,18 @@ var authHelpers     = require('../helpers/auth.js');
 
 // Book Show
 router.get('/', function(req, res) {
-  console.log("Backend Book Show");
+  // console.log("Backend Book Show");
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
       res.json({ currentUser: user });
-      console.log(user);
+      // console.log(user);
     });
 });
 
 // Book Create
 router.post('/', function(req, res) {
-  console.log("Backend Book Create");
+  // console.log("Backend Book Create");
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
       // console.log("looking for user");
@@ -30,16 +30,16 @@ router.post('/', function(req, res) {
         pageCount: req.body.pageCount,
         status: req.body.status
       });
-      console.log("After new book is entered");
-      console.log(newBook);
+      // console.log("After new book is entered");
+      // console.log(newBook);
       user.bookList.push(newBook);
-      console.log("Checking to see if it pushed");
-      console.log(user.bookList);
+      // console.log("Checking to see if it pushed");
+      // console.log(user.bookList);
       user.save()
       // console.log("Logging New Book");
       // console.log(newBook);
-      console.log("Logging User Object");
-      console.log(user);
+      // console.log("Logging User Object");
+      // console.log(user);
       res.json({ user });
     })
     .catch(function(err) {
@@ -49,7 +49,7 @@ router.post('/', function(req, res) {
 
 // Book Update
 router.put('/:id', function(req, res) {
-  console.log("Backend Book Edit");
+  // console.log("Backend Book Edit");
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
       var book = user.bookList.id(req.params.id);
@@ -73,7 +73,7 @@ router.put('/:id', function(req, res) {
 
 // Book Delete
 router.delete('/:id', function(req, res) {
-  console.log("Backend Book Delete");
+  // console.log("Backend Book Delete");
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
       user.bookList.id(req.params.id).remove();
