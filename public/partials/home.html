@@ -1,34 +1,51 @@
 <div class="">
   <h2>Add A Book:</h2>
-  <form ng-submit="book.addBook(home.currentUser)">
+  <form ng-submit="books.addBook(home.currentUser)">
     <div class="">
-      <input type="text" placeholder="Book Title" ng-model="book.newBook.title">
+      <input type="text" placeholder="Book Title" ng-model="books.newBook.title">
     </div>
     <div class="">
-      <input type="text" placeholder="Book Author" ng-model="book.newBook.author">
+      <input type="text" placeholder="Book Author" ng-model="books.newBook.author">
     </div>
     <div class="">
-      <input type="text" placeholder="Book Genre" ng-model="book.newBook.genre">
+      <input type="text" placeholder="Book Genre" ng-model="books.newBook.genre">
     </div>
     <div class="">
-      <input type="text" placeholder="Book Page Count" ng-model="book.newBook.pageCount">
+      <input type="text" placeholder="Book Page Count" ng-model="books.newBook.pageCount">
     </div>
     <div class="">
-      <input type="radio" ng-model="book.newBook.status" value="Read/Keep">Read/Keep
-      <input type="radio" ng-model="book.newBook.status" value="Read/Donate">Read/Donate
-      <input type="radio" ng-model="book.newBook.status" value="In Progress">In Progress
-      <input type="radio" ng-model="book.newBook.status" value="Haven't Read">Haven't Read
-      <input type="radio" ng-model="book.newBook.status" value="Won't Read">Won't Read
+      <input type="radio" ng-model="books.newBook.status" value="Read/Keep">Read/Keep
+      <input type="radio" ng-model="books.newBook.status" value="Read/Donate">Read/Donate
+      <input type="radio" ng-model="books.newBook.status" value="In Progress">In Progress
+      <input type="radio" ng-model="books.newBook.status" value="Haven't Read">Haven't Read
+      <input type="radio" ng-model="books.newBook.status" value="Won't Read">Won't Read
     </div>
-      <button>Submit</button>
+      <button>Submit Book</button>
   </form>
 </div>
 
 <h2>Your Books</h2>
-<div class="" ng-repeat="books in book.savedBooks">
-  <h4>Title: {{books.title}}</h4>
-  <p>Author: {{books.author}}</p>
-  <p>Genre: {{books.genre}}</p>
-  <p>Page Count: {{books.pageCount}}</p>
-  <p>Status: {{books.status}}</p>
+<div class="" ng-repeat="book in books.savedBooks">
+  <h4>Title: {{book.title}}</h4>
+  <p>Author: {{book.author}}</p>
+  <p>Genre: {{book.genre}}</p>
+  <p>Page Count: {{book.pageCount}}</p>
+  <p>Status: {{book.status}}</p>
+  <div class="">
+    <button ng-click="editForm=true">Edit</button>
+      <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
+        <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
+        <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author">
+        <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre">
+        <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount">
+        <div class="">
+          <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status">Read/Keep
+          <input type="radio" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate
+          <input type="radio" value="In Progress" ng-model="books.updatedBook.status">In Progress
+          <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read
+          <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
+        </div>
+        <button ng-click="editForm=false">Submit Edit</button>
+      </form>
+  </div>
 </div>
