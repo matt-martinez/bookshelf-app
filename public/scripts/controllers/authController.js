@@ -2,7 +2,7 @@ function AuthController($http, $state, $scope, $rootScope) {
   var self = this;
 
   function signup(userPass) {
-    console.log("Frontend Sign Up");
+    // console.log("Frontend Sign Up");
     $http.post('/users', userPass)
       .then(function(response) {
       // console.log(response);
@@ -11,7 +11,7 @@ function AuthController($http, $state, $scope, $rootScope) {
   }
 
   function login(userPass) {
-    console.log("Frontend Login");
+    // console.log("Frontend Login");
     $http.post('/sessions/login', userPass)
       .then(function(response) {
         // console.log(response.data.data);
@@ -22,7 +22,7 @@ function AuthController($http, $state, $scope, $rootScope) {
   }
 
   function logout() {
-    console.log("Frontend Logout");
+    // console.log("Frontend Logout");
     $http.delete('/sessions')
       .then(function(response) {
         // console.log(response);

@@ -6,7 +6,7 @@ var authHelpers     = require('../helpers/auth.js');
 
 // User Index
 router.get('/', function(req, res) {
-  console.log("Backend User Index");
+  // console.log("Backend User Index");
   User.find({})
   .exec(function(err, users) {
     if (err) { console.log(err); }
@@ -20,18 +20,18 @@ router.get('/', function(req, res) {
 
 // Get Current User
 router.get('/:id', authHelpers.authorize, function(req, res) {
-  console.log("Backend Get User");
+  // console.log("Backend Get User");
   User.findById(req.params.id)
   .exec(function(err, user) {
     if (err) { console.log(err); }
     res.json({ user });
-    console.log(user);
+    // console.log(user);
   })
 })
 
 // User Create
 router.post('/', authHelpers.createSecure, function(req, res) {
-  console.log("Backend User Create")
+  // console.log("Backend User Create")
   var user = new User({
     name: req.body.name,
     username: req.body.username,
@@ -41,8 +41,8 @@ router.post('/', authHelpers.createSecure, function(req, res) {
 
   user.save(function(err, user) {
     if (err) { console.log(err); }
-    console.log("New User Saved");
-    console.log(user);
+    // console.log("New User Saved");
+    // console.log(user);
     res.json({ status: 201, message: "User Created" });
   });
 
