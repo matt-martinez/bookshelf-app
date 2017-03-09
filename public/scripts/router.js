@@ -16,9 +16,4 @@ angular.module('BookshelfApp', ['ui.router'])
       templateUrl: '/partials/signup.html',
       controller: 'AuthController as auth'
     })
-    .state('book-grid', {
-      url: '/book-grid',
-      templateUrl: '/partials/book-grid.html',
-      controller: 'BookController as books'
-    })
   }
