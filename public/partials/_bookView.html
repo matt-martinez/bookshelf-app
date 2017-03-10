@@ -13,11 +13,11 @@
           <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre" required>
           <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount" required>
           <div class="">
-            <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status" required>Read/Keep
-            <input type="radio" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate <br>
-            <input type="radio" value="In Progress" ng-model="books.updatedBook.status">In Progress
-            <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read <br>
-            <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
+            <input type="radio" name="status" value="Read/Keep" ng-model="books.updatedBook.status" required>Read/Keep
+            <input type="radio" name="status" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate <br>
+            <input type="radio" name="status" value="In Progress" ng-model="books.updatedBook.status">In Progress
+            <input type="radio" name="status" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read <br>
+            <input type="radio" name="status" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
           </div>
           <button class="button-books pure-button" >Submit Edit</button>
       </form>

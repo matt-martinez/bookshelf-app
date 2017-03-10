@@ -2,23 +2,23 @@
   <h2>Add A Book:</h2>
   <form ng-submit="books.addBook(home.currentUser)">
     <div class="">
-      <input type="text" placeholder="Book Title" ng-model="books.newBook.title">
+      <input type="text" placeholder="Book Title" ng-model="books.newBook.title" required>
     </div>
     <div class="">
-      <input type="text" placeholder="Book Author" ng-model="books.newBook.author">
+      <input type="text" placeholder="Book Author" ng-model="books.newBook.author" required>
     </div>
     <div class="">
-      <input type="text" placeholder="Book Genre" ng-model="books.newBook.genre">
+      <input type="text" placeholder="Book Genre" ng-model="books.newBook.genre" required>
     </div>
     <div class="">
-      <input type="text" placeholder="Book Page Count" ng-model="books.newBook.pageCount">
+      <input type="text" placeholder="Book Page Count" ng-model="books.newBook.pageCount" required>
     </div>
     <div class="">
-      <input type="radio" ng-model="books.newBook.status" value="Read/Keep">Read/Keep
-      <input type="radio" ng-model="books.newBook.status" value="Read/Donate">Read/Donate
-      <input type="radio" ng-model="books.newBook.status" value="In Progress">In Progress <br>
-      <input type="radio" ng-model="books.newBook.status" value="Haven't Read">Haven't Read
-      <input type="radio" ng-model="books.newBook.status" value="Won't Read">Won't Read
+      <input type="radio" name="status" ng-model="books.newBook.status" value="Read/Keep" required>Read/Keep
+      <input type="radio" name="status" ng-model="books.newBook.status" value="Read/Donate">Read/Donate
+      <input type="radio" name="status" ng-model="books.newBook.status" value="In Progress">In Progress <br>
+      <input type="radio" name="status" ng-model="books.newBook.status" value="Haven't Read">Haven't Read
+      <input type="radio" name="status" ng-model="books.newBook.status" value="Won't Read">Won't Read
     </div>
       <button class="button-books pure-button">Submit Book</button>
   </form>
