@@ -1,4 +1,4 @@
-<div class="">
+<div class="pure-form">
   <h2>Add A Book:</h2>
   <form ng-submit="books.addBook(home.currentUser)">
     <div class="">
@@ -16,41 +16,41 @@
     <div class="">
       <input type="radio" ng-model="books.newBook.status" value="Read/Keep">Read/Keep
       <input type="radio" ng-model="books.newBook.status" value="Read/Donate">Read/Donate
-      <input type="radio" ng-model="books.newBook.status" value="In Progress">In Progress
+      <input type="radio" ng-model="books.newBook.status" value="In Progress">In Progress <br>
       <input type="radio" ng-model="books.newBook.status" value="Haven't Read">Haven't Read
       <input type="radio" ng-model="books.newBook.status" value="Won't Read">Won't Read
     </div>
-      <button>Submit Book</button>
+      <button class="pure-button">Submit Book</button>
   </form>
 </div>
 
 <h2>Your Books</h2>
-<div class="statusColumns">
-  <div class="readKeep column">
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-md-1-5">
     <h3>Read/Keep</h3>
     <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Keep' ">
       <book></book>
     </div>
   </div>
-  <div class="readDonate column">
+  <div class="pure-u-1 pure-u-md-1-5">
     <h3>Read/Donate</h3>
     <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Read/Donate' ">
       <book></book>
     </div>
   </div>
-  <div class="inProgress column">
+  <div class="pure-u-1 pure-u-md-1-5">
     <h3>In Progress</h3>
     <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'In Progress' ">
       <book></book>
     </div>
   </div>
-  <div class="haventRead column">
+  <div class="pure-u-1 pure-u-md-1-5">
     <h3>Haven't Read</h3>
     <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Haven\'t Read' ">
       <book></book>
     </div>
   </div>
-  <div class="wontRead column">
+  <div class="pure-u-1 pure-u-md-1-5">
     <h3>Won't Read</h3>
     <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="book in books.savedBooks | orderBy: 'status' | filter: 'Won\'t Read' ">
       <book></book>

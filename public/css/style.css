@@ -1,8 +1,28 @@
-.statusColumns {
-  display: flex;
-  flex-direction: row;
+/* Body */
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: #2F8F75;
+  background-color: #F2F2F3;
 }
 
-.column {
-  margin-right: 50px;
+.pure-menu-heading  {
+  font-family: 'Bree Serif', serif;
+  font-size: 2.5em;
+}
+
+form > div {
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.pure-g {
+  padding-bottom: 50px;
+}
+
+input {
+  text-align: center;
 }
