@@ -58,3 +58,17 @@ img {
 .click {
   cursor: pointer;
 }
+
+/* Login Validation */
+.loginError {
+  display: none;
+}
+
+.errorMsg {
+  color: #B81D18;
+  /*margin: auto;*/
+  position: absolute;
+  z-index: 1;
+  margin-top: 25px;
+  margin-left: 90px;
+}
