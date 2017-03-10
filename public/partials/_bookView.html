@@ -4,8 +4,8 @@
   <p>Genre: {{book.genre}}</p>
   <p>Page Count: {{book.pageCount}}</p>
   <div class="">
-    <div class="pure-button-group"><button class="pure-button" ng-click="editForm=true">Edit</button>
-      <button class="pure-button" ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button></div>
+    <div class="pure-button-group"><button class="button-books pure-button" ng-click="editForm=true">Edit</button>
+      <button class="button-books pure-button" ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button></div>
       <div class="pure-form">
         <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
           <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
@@ -19,7 +19,7 @@
             <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read <br>
             <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
           </div>
-          <button class="pure-button" ng-click="editForm=false">Submit Edit</button>
+          <button class="button-books pure-button" ng-click="editForm=false">Submit Edit</button>
       </form>
       </div>
   </div>
