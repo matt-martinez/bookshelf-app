@@ -1,0 +1,12 @@
+/* Body */
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: #2F8F75;
+  background-color: #F2F2F3;
+}
+
+.pure-menu-heading  {
+  font-family: 'Bree Serif', serif;
+  font-size: 2.5em;
+}
