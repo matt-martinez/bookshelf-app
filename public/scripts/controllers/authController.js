@@ -21,15 +21,10 @@ function AuthController($http, $state, $scope, $rootScope) {
           validLogin(true);
           $scope.$emit('loggedInUser', response.data.data);
           $rootScope.$emit('fetchData', response.data.data);
-          // clearLoginForm();
           $state.go('index');
         }
       });
   }
-
-  // function clearLoginForm() {
-  //   self.loginForm = {email: '', password: ''};
-  // }
 
   function logout() {
     // console.log("Frontend Logout");
@@ -51,7 +46,6 @@ function AuthController($http, $state, $scope, $rootScope) {
     }
   }
 
-  // self.clearLoginForm = clearLoginForm;
   self.validLogin = validLogin;
   self.logout = logout;
   self.login = login;
