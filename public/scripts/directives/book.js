@@ -5,6 +5,6 @@ angular.module('BookshelfApp')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: "/partials/_bookView.html"
+      templateUrl: "./partials/_bookView.html"
     };
   }
