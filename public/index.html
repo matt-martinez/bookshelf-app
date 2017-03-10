@@ -16,21 +16,21 @@
     <!-- Custom Directives -->
     <script type="text/javascript" src="scripts/book.js"></script>
     <!-- Styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body ng-controller="HomeController as home">
     <nav class="pure-menu pure-menu-horizontal" ng-controller="AuthController as auth">
-      <h1 class="pure-menu-heading pure-menu-link" ui-sref="index">The Bookcase</h1>
+      <h1 class="pure-menu-heading pure-menu-link" ui-sref="index"><img src="images/books.png" alt="Book Stack"> The Bookcase</h1>
       <ul class="pure-menu-list">
         <li class="pure-menu-item" ng-if="!home.currentUser">
           <form class="pure-form" ng-submit="auth.login(userPass)">
             <input type="text" placeholder="Email" ng-model="userPass.email">
             <input type="password" placeholder="Password" ng-model="userPass.password">
-            <button class="pure-button">Login</button>
+            <button class="button-books pure-button">Login</button>
           </form>
         </li>
         <li class="pure-menu-item pure-menu-link" ng-if="home.currentUser" ng-click="auth.logout()">Logout</li>
@@ -38,10 +38,10 @@
       </ul>
     </nav>
 
-
-
     <ui-view>
     </ui-view>
+
+    <footer>&copy; 2017 Matthew J. Martinez | All Rights Reserved.</footer>
 
   </body>
 </html>
