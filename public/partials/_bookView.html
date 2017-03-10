@@ -8,18 +8,18 @@
       <button class="button-books pure-button" ng-click="books.deleteBook(home.currentUser, book._id)">Delete</button></div>
       <div class="pure-form">
         <form ng-show="editForm" ng-submit="books.editBook(home.currentUser, book._id)">
-          <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title">
-          <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author">
-          <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre">
-          <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount">
+          <input type="text" placeholder="{{book.title}}" ng-model="books.updatedBook.title" required>
+          <input type="text" placeholder="{{book.author}}" ng-model="books.updatedBook.author" required>
+          <input type="text" placeholder="{{book.genre}}" ng-model="books.updatedBook.genre" required>
+          <input type="text" placeholder="{{book.pageCount}}" ng-model="books.updatedBook.pageCount" required>
           <div class="">
-            <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status">Read/Keep
+            <input type="radio" value="Read/Keep" ng-model="books.updatedBook.status" required>Read/Keep
             <input type="radio" value="Read/Donate" ng-model="books.updatedBook.status">Read/Donate <br>
             <input type="radio" value="In Progress" ng-model="books.updatedBook.status">In Progress
             <input type="radio" value="Haven't Read" ng-model="books.updatedBook.status">Haven't Read <br>
             <input type="radio" value="Won't Read" ng-model="books.updatedBook.status">Won't Read
           </div>
-          <button class="button-books pure-button" ng-click="editForm=false">Submit Edit</button>
+          <button class="button-books pure-button" >Submit Edit</button>
       </form>
       </div>
   </div>
