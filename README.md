@@ -4,7 +4,7 @@
 ## Heroku Link: https://the-bookcase.herokuapp.com/#/
 
 ## Project Summary
-The bookcase is a MEAN stack app that allows users to easily keep track of their books. This app consists of two models: a user model and a book model. Users can sign up for an account and enter the various books that they have read, are in the process of reading, wish to get rid of, etc. Once a user adds the book, it is then sorted under the appropriate category. A user can easily edit and delete their book, and even move books to different columns/categories via the edit form.
+The Bookcase is a MEAN stack app that allows users to easily keep track of their books. This app consists of two models: a user model and a book model. Users can sign up for an account and enter the various books that they have read, are in the process of reading, wish to get rid of, etc. Once a user adds the book, it is then sorted under the appropriate category. A user can easily edit and delete their book, and even move books to different columns/categories via the edit form.
 
 ## User Stories
 As a user, I want to be able to:
@@ -104,7 +104,7 @@ Morgan
 - Implement CSS Framework (Met)
 - Find a drag and drop feature for columns
 
-## Project Challenges and Unresolved Issues
+## Project Challenges
 The larger challenge of this project stemmed from my efforts to make my code more DRY. Since I was organizing books into columns based on status values, I needed a way to effectively make this happen. I chose to use Angular filters rather than making separate calls to my back-end controllers or using functions. The result of this approach left me with a huge chunk of code in my main partial that was repeated five times, one for each filter.
 
 To simplify my code, I learned how to create custom directives with Angular. This enabled me to cut down my working code by a couple hundred lines and move my largest chunk into its own directive file. I was then able to use a single book element that I created as a placeholder and run my filter off of that. For reference, this occurred in my home partial and my book view partial. Learning how to use custom directives was a great lesson, one that I have already started implementing in my other work.
